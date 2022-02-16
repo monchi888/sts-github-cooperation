@@ -25,6 +25,7 @@ dependencies {
 	runtimeOnly('com.h2database:h2')
 	runtimeOnly('org.springframework.boot:spring-boot-devtools')
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	compileOnly('org.projectlombok:lombok')
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
     }

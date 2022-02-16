@@ -2,11 +2,12 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title th:text="${title}">Insert title here</title>
 </head>
 <body>
-<h1>title</h1>
-
+<h1 th:text="${title}">title</h1>
+<p th:text="${name}">name</p>
+<p th:text="${email}">email</p>
 <!-- These are links to use for next lessons -->
 <!-- こちらは後で使用されるリンクです -->
 <p><a href="#" th:href="@{/inquiry}">Inquiry</a></p>

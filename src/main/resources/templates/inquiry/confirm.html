@@ -6,9 +6,11 @@
 <title th:text="${title}">Insert title here</title>
 </head>
 <body>
-<h1 th:text="${title}">仮のタイトル</h1>
+<h1 th:text="${title}">title</h1>
+<!-- 
 <p>入力内容をご確認ください</p>
 <p th:text="${inquiryForm.name}"></p>
+ -->
 <div th:object="${inquiryForm}">
 <p th:text="*{name}"></p>
 <p th:text="*{email}"></p>

@@ -10,8 +10,7 @@ import org.springframework.web.bind.annotation.InitBinder;
 
 @ControllerAdvice
 // メソッド実行前のタイミングで共通処理を実行したいときに
-// @ControllerAdvice
-// アノテーションを付与しておくだけで中の処理が実行される
+// このアノテーションを付与しておくだけで中の処理が実行される
 public class WebMvcControllerAdvice {
 
 	/*
