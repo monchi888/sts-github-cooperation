@@ -1,1 +1,1 @@
-# SpringBeginnerAnswer# SpringBeginnerEasy
+# Spring Boot 2 Beginner's Study
