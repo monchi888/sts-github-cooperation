@@ -30,7 +30,6 @@ public class InquiryController {
 	public String form(InquiryForm inquiryForm,
 				Model model,
 				@ModelAttribute("complete") String complete) {
-		
 		model.addAttribute("title", "Inquiry Form");
 		return "inquiry/form";
 	}
@@ -56,7 +55,6 @@ public class InquiryController {
 	public String confirm(@Validated InquiryForm inquiryForm,
 				BindingResult result,
 				Model model) {
-		
 		if(result.hasErrors()) {
 			model.addAttribute("title", "InquiryForm");
 			return "inquiry/form";
@@ -74,7 +72,6 @@ public class InquiryController {
 				BindingResult result,
 				Model model,
 				RedirectAttributes redirectAttributes) {
-		
 		if(result.hasErrors()) {
 			model.addAttribute("title", "InquiryForm");
 			return "inquiry/form";
@@ -82,13 +79,12 @@ public class InquiryController {
 		/*
 		 * RedirectAttributesでデータを渡す際にはmodelが使えないため
 		 * addFlashAttributeメソッドを使用
-		 * リダイレクトではリクエストをし直すので、
-		 * リクエストスコープにデータを保管しておいても
-		 * 次のリクエスト時には失われる
-		 * addFlashAttributeメソッドは、リクエストを隔てて
-		 * データを保管する仕組みである「セッション」という機能を
+		 * addFlashAttributeメソッドは、
+		 * リクエストを隔ててデータを保管する仕組みである「セッション」という機能を
 		 * 内部的に使用している
 		 * リダイレクトを使うのは、二重クリック問題に対応するため
+		 * リダイレクトではリクエストをし直すので、
+		 * リクエストスコープにデータを保管しておいても次のリクエスト時には失われる
 		 */
 		redirectAttributes.addFlashAttribute("complete", "Registerd");
 		/*
