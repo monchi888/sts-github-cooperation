@@ -8,9 +8,11 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.InitBinder;
 
+/*
+ * メソッド実行前のタイミングで共通処理を実行したいときに
+ * このアノテーションを付与しておくだけで中の処理が実行される
+ */
 @ControllerAdvice
-// メソッド実行前のタイミングで共通処理を実行したいときに
-// このアノテーションを付与しておくだけで中の処理が実行される
 public class WebMvcControllerAdvice {
 
 	/*

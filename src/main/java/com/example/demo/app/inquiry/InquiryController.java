@@ -1,5 +1,9 @@
 package com.example.demo.app.inquiry;
 
+import java.time.LocalDateTime;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -10,21 +14,31 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.example.demo.entity.Inquiry;
+import com.example.demo.service.InquiryService;
+
 @Controller
 @RequestMapping("/inquiry")
 public class InquiryController {
 
-// 	private final InquiryService inquiryService;
+ 	private final InquiryService inquiryService;
 
-	//Add an annotation here
-// 	public InquiryController(InquiryService inquiryService){
-// 		this.inquiryService = inquiryService;
-// 	}
+ 	@Autowired
+ 	public InquiryController(InquiryService inquiryService){
+ 		this.inquiryService = inquiryService;
+ 	}
+
+	@GetMapping
+	public String index(Model model) {
+		List<Inquiry> list = inquiryService.getAll();
+		model.addAttribute("inquiryList", list);
+		model.addAttribute("title", "Inquiry Index");
+		return "inquiry/index";
+	}
 
 	/*
 	 * formクラスを引数に設定することで、
-	 * formの入力欄と紐づけられて
-	 * 自動的に初期化される
+	 * formの入力欄と紐づけられて自動的に初期化される
 	 */
 	@GetMapping("/form")
 	public String form(InquiryForm inquiryForm,
@@ -32,14 +46,6 @@ public class InquiryController {
 				@ModelAttribute("complete") String complete) {
 		model.addAttribute("title", "Inquiry Form");
 		return "inquiry/form";
-	}
-
-	@GetMapping
-	public String index(Model model) {
-
-		//hands-on
-
-		return "inquiry/index";
 	}
 
 	@PostMapping("/form")
@@ -76,6 +82,13 @@ public class InquiryController {
 			model.addAttribute("title", "InquiryForm");
 			return "inquiry/form";
 		}
+		
+		Inquiry inquiry = new Inquiry();
+		inquiry.setName(inquiryForm.getName());
+		inquiry.setEmail(inquiryForm.getEmail());
+		inquiry.setContents(inquiryForm.getContents());
+		inquiry.setCreated(LocalDateTime.now());
+		inquiryService.save(inquiry);
 		/*
 		 * RedirectAttributesでデータを渡す際にはmodelが使えないため
 		 * addFlashAttributeメソッドを使用

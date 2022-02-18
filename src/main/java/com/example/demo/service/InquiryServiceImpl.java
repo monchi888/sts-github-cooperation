@@ -2,23 +2,34 @@ package com.example.demo.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.demo.dao.InquiryDao;
 import com.example.demo.entity.Inquiry;
-import com.example.demo.repository.InquiryDao;
 
 /*
- * Add an annotation here
+ * @Serviceアノテーションをつけることで、
+ * DIコンテナ側で自動的にシングルトンとしてインスタンス化される
  */
+@Service
 public class InquiryServiceImpl implements InquiryService {
 
 	private final InquiryDao dao;
 
+	@Autowired
 	public InquiryServiceImpl(InquiryDao dao) {
 		this.dao = dao;
 	}
 
 	@Override
 	public void save(Inquiry inquiry) {
-		//hands-on
+		dao.insertInquiry(inquiry);
+	}
+
+	@Override
+	public List<Inquiry> getAll() {
+		return dao.getAll();
 	}
 
 //  This method is used in the latter chapter
@@ -30,12 +41,4 @@ public class InquiryServiceImpl implements InquiryService {
 //			throw new InquiryNotFoundException("can't find the same ID");
 //		}
 //	}
-
-	@Override
-	public List<Inquiry> getAll() {
-
-		//hands-on
-
-		return null;
-	}
 }

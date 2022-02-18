@@ -1,4 +1,4 @@
-package com.example.demo.repository;
+package com.example.demo.dao;
 
 import java.util.List;
 
@@ -8,9 +8,9 @@ public interface InquiryDao {
 	
 	void insertInquiry(Inquiry inquiry);
 	
+	List<Inquiry> getAll();
+	
 //  This is used in the latter chapter
 //  こちらは後で使用
 //	int updateInquiry(Inquiry inquiry);
-	
-	List<Inquiry> getAll();
 }
