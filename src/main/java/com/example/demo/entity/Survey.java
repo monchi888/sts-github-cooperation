@@ -11,14 +11,14 @@ public class Survey {
 	
 	public Survey() {}
 	
-	public Survey(int id, int age, int satisfaction, String comment, LocalDateTime created) {
-		super();
-		this.id = id;
-		this.age = age;
-		this.satisfaction = satisfaction;
-		this.comment = comment;
-		this.created = created;
-	}
+//	public Survey(int id, int age, int satisfaction, String comment, LocalDateTime created) {
+//		super();
+//		this.id = id;
+//		this.age = age;
+//		this.satisfaction = satisfaction;
+//		this.comment = comment;
+//		this.created = created;
+//	}
 
 	public int getId() {
 		return id;
@@ -59,6 +59,4 @@ public class Survey {
 	public void setCreated(LocalDateTime created) {
 		this.created = created;
 	}
-	
-	
 }
