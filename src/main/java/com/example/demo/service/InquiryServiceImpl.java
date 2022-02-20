@@ -32,13 +32,13 @@ public class InquiryServiceImpl implements InquiryService {
 		return dao.getAll();
 	}
 
-//  This method is used in the latter chapter
-//	@Override
-//	public void update(Inquiry inquiry) {
-//
-//		//return dao.updateInquiry(inquiry);
-//		if(dao.updateInquiry(inquiry) == 0) {
-//			throw new InquiryNotFoundException("can't find the same ID");
-//		}
-//	}
+	@Override
+	public void update(Inquiry inquiry) {
+		/*
+		 * データが存在しない場合は例外をスローする
+		 */
+		if(dao.updateInquiry(inquiry) == 0) {
+			throw new InquiryNotFoundException("can't find the same ID");
+		}
+	}
 }

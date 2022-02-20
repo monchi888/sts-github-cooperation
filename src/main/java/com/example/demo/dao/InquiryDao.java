@@ -9,8 +9,6 @@ public interface InquiryDao {
 	void insertInquiry(Inquiry inquiry);
 	
 	List<Inquiry> getAll();
-	
-//  This is used in the latter chapter
-//  こちらは後で使用
-//	int updateInquiry(Inquiry inquiry);
+
+	int updateInquiry(Inquiry inquiry);
 }
