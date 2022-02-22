@@ -27,7 +27,7 @@
       </div>
 
 
-<p>入力内容をご確認ください</p>
+<p>Please check your input</p>
 <div th:object="${inquiryForm}">
 <div class="mb-5">
 <ul class="list-group">
@@ -40,13 +40,13 @@
 	<input type="hidden" name="name" th:value="*{name}">
 	<input type="hidden" name="email" th:value="*{email}">
 	<input type="hidden" name="contents" th:value="*{contents}">
-	<button type="submit" class="btn btn-primary">戻る</button>
+	<button type="submit" class="btn btn-primary">Back</button>
 </form>
 <form method="post" action="#" th:action="@{/inquiry/complete}">
 	<input type="hidden" name="name" th:value="*{name}">
 	<input type="hidden" name="email" th:value="*{email}">
 	<input type="hidden" name="contents" th:value="*{contents}">
-	<button type="submit" class="btn btn-primary">送信する</button>
+	<button type="submit" class="btn btn-primary">Complete</button>
 </form>
 </div>
 

@@ -1,6 +1,6 @@
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -14,14 +14,11 @@
 
     <!-- Custom styles for this template -->
     <link href="starter-template.css"  th:href="@{/css/starter-template.css}" rel="stylesheet">
-  </head>
+</head>
 
-  <body>
-
-
-	<div th:replace="~{block/header_boot::headerA_boot}"></div>
-    <main role="main" class="container">
-
+<body>
+<div th:replace="~{block/header_boot::headerA_boot}"></div>
+<main role="main" class="container">
       <div class="starter-template">
         <h1 th:text="${title}">Bootstrap starter template</h1>
         <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
@@ -39,19 +36,18 @@
   </thead>
   <tbody>
     <tr th:each="inquiry : ${inquiryList}">
-      <td  scope="row" th:text="${inquiry.id}">Mark</td>
-      <td th:text="${inquiry.name}">Otto</td>
-      <td th:text="${inquiry.email}">@mdo</td>
-      <td th:text="${inquiry.contents}">Otto</td>
-      <td th:text="${inquiry.created}">@mdo</td>
+      <td  scope="row" th:text="${inquiry.id}">id</td>
+      <td th:text="${inquiry.name}">name</td>
+      <td th:text="${inquiry.email}">email</td>
+      <td th:text="${inquiry.contents}">contents</td>
+      <td th:text="${inquiry.created}">created</td>
     </tr>
-
   </tbody>
 </table>
 
+</main>
 
-    </main><!-- /.container -->
-
+    <!-- /.container -->
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

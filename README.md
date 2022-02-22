@@ -9,3 +9,5 @@
 	- Reflection of lecture contents up to No.47
 - 2022/02/20
 	- Reflection of lecture contents up to No.51
+- 2022/02/22
+	- Reflection of lecture contents up to No.55

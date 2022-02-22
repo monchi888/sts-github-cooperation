@@ -1,4 +1,3 @@
-
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
   <head>
@@ -18,17 +17,12 @@
   </head>
 
   <body>
-
-
     <div th:replace="~{block/header_boot::headerA_boot}"></div>
     <main role="main" class="container">
-
       <div class="starter-template">
         <h1 th:text="${title}">Bootstrap starter template</h1>
         <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
       </div>
-      
-
 	<div th:unless="${#strings.isEmpty(complete)}" >
 		<div th:text="${complete}" class="alert alert-success" role="alert">
 		  A simple success alert—check it out!
@@ -37,21 +31,24 @@
 	
 	<form method="post" action="#" th:action="@{/inquiry/confirm}" th:object="${inquiryForm}">
 	  <div class="form-group">
-	    <label for="name">お名前</label>
+	    <label for="name">Name</label>
 	    <input type="text" name="name" class="form-control" id="name" th:value="*{name}">
 	  </div>
 	  <div class="text-danger mb-4" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+	  
 	  <div class="form-group">
-	    <label for="email">メール</label>
+	    <label for="email">Email</label>
 	    <input type="text" name="email" class="form-control" id="email"  th:value="*{email}">
 	  </div>
 	  <div class="text-danger mb-4" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+	  
 	  <div class="form-group">
-	    <label for="contents">Inquiry</label>
+	    <label for="contents">Contents</label>
 	    <textarea  name="contents" class="form-control" id="detail" rows="3" th:field="*{contents}"></textarea>
 	  </div>
 	  <div class="text-danger mb-4" th:if="${#fields.hasErrors('contents')}" th:errors="*{contents}"></div>
-	  <button type="submit" class="btn btn-primary">確認する</button>
+	  
+	  <button type="submit" class="btn btn-primary">Confirm</button>
 	</form>
     </main><!-- /.container -->
 
