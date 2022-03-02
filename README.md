@@ -1,7 +1,6 @@
 # Spring Boot 2 Beginner's Study
 # Inquiry & Survey
-Inquiry & Survey[1]<br>
-[1]:http://localhost:8080/inquiry
+Inquiry & Survey URL: http://localhost:8080/inquiry
 - 2022/02/16
 	- Reflection of lecture contents up to No.33
 - 2022/02/18
